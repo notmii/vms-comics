@@ -1,8 +1,11 @@
 build:
 	docker-compose build
 
-server_up:
+up:
+	docker-compose up
+
+down:
 	docker-compose up
 
 migrate:
-	docker exec -it webapp php artisan migrate
+	docker exec -it vms-comics-webapp php artisan migrate
