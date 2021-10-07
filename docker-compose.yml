@@ -10,7 +10,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: laravel-app
-    container_name: webapp
+    container_name: vms-comics-webapp
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -22,7 +22,7 @@ services:
   nginx:
     image: nginx:alpine
     restart: unless-stopped
-    container_name: http
+    container_name: vms-comics-http
     ports:
       - 9090:80
     volumes:
@@ -31,11 +31,11 @@ services:
     networks:
       - laravel_net
 
-  #Mysl Service
+  #MySQL Service
   db:
     image: mysql:5.7
     restart: unless-stopped
-    container_name: database
+    container_name: vms-comis-db
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
