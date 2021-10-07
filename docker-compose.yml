@@ -35,7 +35,7 @@ services:
   db:
     image: mysql:8
     restart: unless-stopped
-    container_name: vms-comis-db
+    container_name: vms-comics-db
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
